@@ -1,0 +1,30 @@
+[project]
+name = "syllyagent"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "accelerate>=1.2.0",
+    "haystack-ai>=2.8.0",
+    "ollama-haystack>=2.1.0",
+    "pdfminer-six>=20240706",
+    "python-docx>=1.1.2",
+    "sentence-transformers>=3.3.1",
+    "sentencepiece>=0.2.0",
+    "torch>=2.5.1",
+    "transformers>=4.47.0",
+]
+
+[tool.uv.sources]
+torch = [
+  { index = "pytorch-cu121", marker = "platform_system != 'Darwin'"},
+]
+torchvision = [
+  { index = "pytorch-cu121", marker = "platform_system != 'Darwin'"},
+]
+
+[[tool.uv.index]]
+name = "pytorch-cu121"
+url = "https://download.pytorch.org/whl/cu121"
+explicit = true
